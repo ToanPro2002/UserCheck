@@ -3,7 +3,7 @@ import "../style/SearchBar.css";
 const SearchBar = ({ onSearch }) => {
   // const [input, setInput] = useState("");
   const [query, setQuery] = React.useState(""); // Lưu từ khóa đang nhập
-  const [searchHistory, setSearchHistory] = React.useState([]); // Lưu lịch sử tìm kiếm
+  const [searchHistory, setSearchHistory] = React.useState(['Micel Toan']); // Lưu lịch sử tìm kiếm
   const [showSuggestions, setShowSuggestions] = React.useState(false);
 
   const handleSearch = () => {
@@ -13,11 +13,15 @@ const SearchBar = ({ onSearch }) => {
       }
       setSearchHistory((prev) => [...prev, query]);
       setQuery("");
-      onSearch(query);
+      // onSearch(query);
       setShowSuggestions(false);
     }
     onSearch(query);
   };
+  if (searchHistory.length > 5) {
+    searchHistory.shift();
+  }
+
   console.log("searchHistory", searchHistory);
   const handleSuggestionsClick = (value) => {
     setQuery(value);
