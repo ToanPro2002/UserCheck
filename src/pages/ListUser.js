@@ -34,7 +34,6 @@ export default function ListUser() {
   //   }, 300), // 300ms delay
   //   [users],
   // );
-
   // console.log("searchName:", searchName);
   const handleSearch = (name) => {
     // debouncedSearch(name);
@@ -42,6 +41,14 @@ export default function ListUser() {
       setSearchName(result);
     });
   };
+
+
+  // const handleExtraButton = () => {
+  //   // const extraButton = searchName;
+  //   console.log('extraButton:', previousButtonValue);
+  //   console.log("Extra button clicked");
+  //   return <UserTable users={previousButtonValue} isLoading={isLoading} error={error} />;
+  // };
   // console.log("searchName:", searchName);
   // const [searchName, setSearchName] = React.useState('');
   // console.log("users:", users);
@@ -57,6 +64,7 @@ export default function ListUser() {
       <h1>User List</h1>
       <SearchBar onSearch={handleSearch} />
       <button onClick={handleCreate}>Tạo User</button>
+      <button onChange={(e)=> setSearchName.target.value}>Extra button </button>
       {searchName.length === 0 ? (
         <UserTable users={users} isLoading={isLoading} error={error} />
       ) : (

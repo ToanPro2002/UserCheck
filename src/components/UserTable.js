@@ -23,12 +23,10 @@ const UserTable = ({ users ,isLoading, error}) => {
     const handleDelete = (id) => {
       if (window.confirm('Bạn có chắc chắn muốn xóa?')) {
         deleteUser(id).then(() => {
-          navigate('/');
+          window.location.reload();
         });
       }
-      else {
-        return null;
-      }
+      return null;
     }
     return (
         <table>

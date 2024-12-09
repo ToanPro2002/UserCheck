@@ -59,6 +59,8 @@ export const searchUsers = async (name) => {
     return response.data;
   } catch (error) {
     console.error("Error searching users:", error);
+    alert("No user found");
+    return [];
   }
 };
 export const createUser = async (user) => {
@@ -93,7 +95,7 @@ export const getUserById = async (id) => {
 }
 
 export const deleteUser =  async (id) => {
-  window.confirm('Are you sure you want to delete this user?');
+  // window.confirm('Are you sure you want to delete this user?');
   const response = await apiClient.delete(`${DOMAIN}/users/${id}`);
   console.log("deleteUser response:", response.data);
   // dispatch({ type: 'DELETE_USER', payload: id });
