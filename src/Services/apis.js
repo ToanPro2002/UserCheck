@@ -91,3 +91,10 @@ export const getUserById = async (id) => {
   return response.data;
   // dispatch({ type: 'GT_USER_BY_ID', payload:
 }
+
+export const deleteUser =  async (id) => {
+  window.confirm('Are you sure you want to delete this user?');
+  const response = await apiClient.delete(`${DOMAIN}/users/${id}`);
+  console.log("deleteUser response:", response.data);
+  // dispatch({ type: 'DELETE_USER', payload: id });
+};

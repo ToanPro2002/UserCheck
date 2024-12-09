@@ -15,7 +15,7 @@ const vietnamesePhoneRegex = RegExp(
 
 const schema = yup.object({
   name: yup.string().required("This field is required"),
-  gender: yup.number().required("This field is required").max(2, "Invalid"),
+  gender: yup.number().positive().required("This field is required").max(2, "Invalid"),
   phone_number: yup
     .string()
     .required()

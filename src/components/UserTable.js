@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 // import { useDispatch } from 'react-redux';
 // import { deleteUser } from '../redux/userAction';
+import { deleteUser } from '../Services/apis';
 import '../style/UserTable.css';
 const UserTable = ({ users ,isLoading, error}) => {
   const navigate = useNavigate();
@@ -20,7 +21,14 @@ const UserTable = ({ users ,isLoading, error}) => {
         navigate(`/edit/${id}`);
     };
     const handleDelete = (id) => {
+      if (window.confirm('Bạn có chắc chắn muốn xóa?')) {
+        deleteUser(id).then(() => {
+          navigate('/');
+        });
+      }
+      else {
         return null;
+      }
     }
     return (
         <table>
