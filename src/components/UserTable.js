@@ -1,19 +1,26 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { deleteUser } from '../redux/userAction';
+// import { useDispatch } from 'react-redux';
+// import { deleteUser } from '../redux/userAction';
 import '../style/UserTable.css';
-const UserTable = ({ users }) => {
+const UserTable = ({ users ,isLoading, error}) => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  if (isLoading) {
+    return <div>Loading...</div>; // Hiển thị trạng thái loading
+  }
+
+  if (error) {
+    return <div>Error occurred: {error.message}</div>; // Hiển thị lỗi
+  }
+  if (!users.length) {
+    return <div>No users found.</div>; // Hiển thị khi không có dữ liệu
+  }
     const handEditing = (id) => {
       // console.log("id:",id);
         navigate(`/edit/${id}`);
     };
     const handleDelete = (id) => {
-        if (window.confirm("Are you sure you want to delete this user?")) {
-            dispatch(deleteUser(id));
-        }
+        return null;
     }
     return (
         <table>

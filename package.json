@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@hookform/resolvers": "^3.9.1",
+    "@tanstack/react-query": "^4.36.1",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -10,12 +12,15 @@
     "axios": "^1.7.9",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-hook-form": "^7.54.0",
+    "react-query": "^3.39.3",
     "react-redux": "^9.1.2",
     "react-scripts": "5.0.1",
     "react-widgets": "^5.8.4",
     "redux": "^5.0.1",
     "redux-thunk": "^3.1.0",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "yup": "^1.5.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -42,6 +47,7 @@
     ]
   },
   "devDependencies": {
+    "@tanstack/eslint-plugin-query": "^4.38.0",
     "react-router-dom": "^7.0.2"
   }
 }

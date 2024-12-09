@@ -1,68 +1,46 @@
-// import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from "react-redux";
-// import {useSelector} from 'react-redux'
-// import { fetchUsers } from '../redux/userAction.js';
-import { fetchUsers, searchUsers } from "../redux/userAction.js";
-// import { useEffect } from 'react';
-import SearchBar from "./SearchBar.js";
-import UserTable from "./UserTable.js";
-// import axios from "axios";
-import React, { useEffect } from "react";
+// // import React, { useEffect } from 'react';
+// import { useDispatch, useSelector } from "react-redux";
+// // import { fetchUsers } from '../redux/userAction.js';
+// import { fetchUsers, searchUsers} from "../redux/userAction.js";
+// import SearchBar from "./SearchBar.js";
+// import UserTable from "./UserTable.js";
+// import React, { useEffect} from "react";
+// import '../style/UserList.css'
+// // import { useQuery } from '@tanstack/react-query';
+// import { useNavigate } from 'react-router-dom';
 
-const UserList = () => {
-  // const DOMAIN = "https://674d7ca1635bad45618b8933.mockapi.io/api/test";
-  // const [users, setUsers] = useState([]);
-  // const fetchUsers = async () => {
-  //   const response = await axios.get(`${DOMAIN}/users`);
-  //   setUsers(response.data);
-  // };
-  // const searchUsers = async (name) => {
-  //   await axios.get(`${DOMAIN}/users`, { params: { name } });
-  // }
-  // useEffect(() => {
-  //   fetchUsers();
-  // }, []);
-  //   React.useEffect(() => {
-  //   const filteredItem = users.filter((user) =>
-  //     user.name.toLowerCase().includes(handleSearch.toLocaleLowerCase())
-  //   );
-  //   setFilterUser(filteredItem);
-  // }, [searchName, user]);
+// const UserList = () => {
+//   const dispatch = useDispatch();
+//   const { users, searchFilter } = useSelector((state) => state.user);
+//   const navigator = useNavigate();
+//   // const {filter, setFilter} = React.useState('');
+//   useEffect(() => {
+//     dispatch(fetchUsers());
+//   }, [dispatch]);
 
-  // const handleSearch = (name) => {
-  //   searchUsers(name);
-  // };
-  const dispatch = useDispatch();
-  const { users, searchFilter } = useSelector((state) => state.user);
+//   const handleSearch = (name) => {
+//     dispatch(searchUsers(name));
+//     // setFilter(name);
+//   };
 
-  useEffect(() => {
-    dispatch(fetchUsers());
-  }, [dispatch]);
+//   const handleFilterPrevious = () => {
+//     if (searchFilter) {
+//       dispatch(searchUsers(searchFilter));
+//     }
+//   };
+//   const createUser = () => {
+//     navigator('/create');
+//   };
+//   return (
+//     <div>
+//       <SearchBar onSearch={handleSearch} />
+//       <button onClick={handleFilterPrevious}>
+//         Lọc theo lần tìm kiếm trước đó
+//       </button>
+//       <button onClick={createUser}>Create</button>
+//       <UserTable users={users} />
+//     </div>
+//   );
+// };
 
-  const handleSearch = (name) => {
-    dispatch(searchUsers(name));
-  };
-
-  const handleFilterPrevious = () => {
-    if (searchFilter) {
-      dispatch(searchUsers(searchFilter));
-    }
-  };
-  const styleButton = {
-    padding: "10px",
-    borderRadius: "10px",
-    border: "2px solid #ccc",
-  };
-  return (
-
-    <div>
-      <SearchBar onSearch={handleSearch} />
-      <button onClick={handleFilterPrevious} style={styleButton}>
-        Lọc theo lần tìm kiếm trước đó
-      </button>
-      <UserTable users={users} />
-    </div>
-  );
-};
-
-export default UserList;
+// export default UserList;

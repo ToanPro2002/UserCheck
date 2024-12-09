@@ -1,36 +1,21 @@
-import React, {StrictMode} from "react";
+import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-// import App from './App';
-
+import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-// import router from react-router-dom;
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import UserList from "./components/UserList";
-import { Provider } from 'react-redux'
-import store from './redux/store'
-import UserForm from "./components/UserForm";
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import UserList from "./components/UserList";
+// import UserForm from "./components/UserForm";
+// import { Provider } from "react-redux";
+// import store from "./redux/store";
+// import { StrictMode } from "react";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-// import { Provider } from 'react-redux';
-// store.dispatch({ type: 'todos/todoAdded', payload: 'Learn about actions' })
-  // useEffect(() => {
-  //     dispatch(fetchUsers());
-  // }, [dispatch]);
+
 root.render(
-  <StrictMode>
-    <Provider store={store}>
-    <BrowserRouter>
-      <Routes>
-        {/* Trang danh sách user */}
-        <Route path="/" element={<UserList />} />
-        {/* Trang tạo mới user */}
-        <Route path="/create" element={<UserForm />} />
-        {/* Trang chỉnh sửa user */}
-        <Route path="/edit/:id" element={<UserForm isEditing />} />
-      </Routes>
-    </BrowserRouter>
-    </Provider>
-  </StrictMode>
+  // <StrictMode>
+    <App />
+
 );
 
 // If you want to start measuring performance in your app, pass a function
